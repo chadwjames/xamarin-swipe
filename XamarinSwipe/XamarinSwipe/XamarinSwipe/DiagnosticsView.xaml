@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xamarinSwipe="clr-namespace:XamarinSwipe;assembly=XamarinSwipe"
+             x:Class="XamarinSwipe.DiagnosticsView">
+  <ContentView.BindingContext>
+    <xamarinSwipe:DiagnosticsViewModel/>
+  </ContentView.BindingContext>
+  <StackLayout BackgroundColor="#00263b" Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="2,30,2,20">
+    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+      <Label Text="{Binding Title}"  HorizontalOptions="CenterAndExpand" FontSize="30" FontAttributes="Bold" TextColor="#00afef" />
+    </StackLayout>
+    <BoxView WidthRequest="1000" HeightRequest="2" Color="#00afef"></BoxView>
+    <Frame VerticalOptions="Center" HorizontalOptions="Start" Padding="10,10,10,10" HeightRequest="25" BackgroundColor="Transparent">
+      <Label Text="Swipe left to close."  VerticalOptions="Center" HorizontalOptions="Start" FontSize="18" HeightRequest="25" TextColor="#8dc63f" />
+    </Frame>
+    <ListView ItemsSource="{Binding DiagData }"
+              BackgroundColor="#023652"
+              VerticalOptions="Start"
+              HorizontalOptions="FillAndExpand"
+              IsEnabled="True"
+              RowHeight="35">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <ViewCell.View>
+              <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="25,0,25,0">
+                <Label Text="{Binding Name}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" FontSize="14" TextColor="#00bff3"/>
+                <Label Text="{Binding Value}" VerticalOptions="Center" HorizontalOptions="End" FontSize="14" TextColor="#aaaaaa"/>
+              </StackLayout>
+            </ViewCell.View>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>  
+  </StackLayout>
+</ContentView>
