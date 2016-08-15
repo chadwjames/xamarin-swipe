@@ -1,5 +1,5 @@
 # xamarin-swipe
-Xamarin froms pan gesture recognizer demo.
+Xamarin Froms pan gesture recognizer demo.
 
             /* The perpouse of this app is to help me undersand Pan 
              * Gestures in Xamarin forms. There seams to be some inconsistancies between iOS and Android.
